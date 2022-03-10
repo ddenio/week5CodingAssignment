@@ -79,7 +79,7 @@ class Menu {
         `);
     }
 
-    showCollectorMenuOptions(collectorInfo) {
+    showCollectorMenuOptions(collectorInfo) {                // A submenu in our Menu class, this is after we view a collector and can now create and delete a card from collector choice
         return prompt(`
             0) Back
             1) Create a card
@@ -125,14 +125,14 @@ class Menu {
         }
     }
 
-    deleteCollector() {
+    deleteCollector() {                                                         //delete a Collector from our collector array, user selects index, we kick out the particular index that they chose.
         let index = prompt('Enter the Collector you wish to delete:');
         if (index > -1 && index < this.collectors.length) {
             this.collectors.splice(index, 1);
         }
     }
 
-    createCard() {
+    createCard() {                                                      //creating a card using user based input for the card name, set, color, and rarity, adds card to our collection array
         let name = prompt('Enter the name for a new card:');
         let set = prompt('Enter the set your card is from:');
         let color = prompt('Enter the color of your card:');
@@ -140,7 +140,7 @@ class Menu {
         this.selectedCollector.collection.push(new Card(name, set, color, rarity));
     }
 
-    deleteCard() {
+    deleteCard() {                                                                  //same as above, but splices a card out of our collection array
         let index = prompt('Enter the index of the card you wish to delete:');
         if (index > -1 && index < this.selectedCollector.collection.length) {
             this.selectedCollector.collection.splice(index, 1);
