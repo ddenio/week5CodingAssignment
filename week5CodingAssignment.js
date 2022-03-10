@@ -150,4 +150,5 @@ class Menu {
 
 
 let menu = new Menu();                 //creating an instance of our Menu Class
-menu.start();
+
+menu.start();                   //using our start() Method in our Menu class
